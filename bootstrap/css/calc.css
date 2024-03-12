@@ -1,0 +1,35 @@
+
+.calc{
+    width: 100%;
+    margin:10% 25%;
+    background-color: rgb(221, 224, 224);
+    padding: 50px;
+    border: 2px inset black;
+}
+.dispaly{
+    padding: 5px;
+    background-color: yellowgreen;
+    text-align: right;
+}
+#btn{
+    margin: 2px;
+}
+.calc{
+    width: 40%;
+}
+table{
+    border-collapse: collapse;
+    text-align: center;
+    
+}
+td{
+    width:10%;
+    margin: 1px;
+}
+#clr, #eq{
+    width:21%;   
+}
+#input{
+    padding:0 5px;
+}
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Save form Data in a Text File using JavaScript</title>
+  <style>
+    * { box-sizing: border-box; font-family: Corbel; }
+    div {
+      padding: 10px;
+      background-color: #f6f6f6;
+      overflow: hidden;
+    }
+    input[type=text], textarea, select {
+      font-size: 18px;
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type=button]{ 
+      font-size: 18px;
+      width: auto;
+      float: right;
+      cursor: pointer;
+      padding: 7px;
+    }
+    a { color: blue; }
+  </style>
+</head>
+<body>
+    <form id="personalForm" method="POST" > 
+        <div class="container-fluid  border">
+            <div class="row">                                                                                                                                                                                               <div class="row my-3">
+            <div class="col-lg-6" >FULL NAME of the CANDIDATE<span style="color: red;">*</span>
+                <div class="row my-3 ">
+                    <div class="col-lg-12">
+                        <input id="fname"
+                         type="text" class="form-control inputs" required >
+                    </div>
+            </div></div>
+            <div class="col-lg-6"><label for="gender" id="gender">Candidate's Gender</label><span style="color: red;">*</span>
+                <div class="row my-3">
+                    <div class="col-lg-6">
+                <input 
+                 type="radio" id="male" name="gender" value="male" class="ml-3" checked  required><label for="male" class="mx-2" ><b>Male</b></label>
+                <input 
+                 type="radio" id="female" name="gender" value="female" class="ml-3" ><label for="female" class="mx-2"><b>Female</b></label>
+                <input 
+                 type="radio" id="other" name="gender" value="other" class="ml-3"><label for="other" class="mx-2"><b>Other</b></label>
+
+                    </div>
+            </div>
+            </div>
+        </div>
+    <button onclick="saveFile()">Save as Text</button>
+  </body>
+  <script>
+    let saveFile = () => {
+
+      // Get the data from each element on the form.
+      var name = document.getElementById("fname");
+  var gender = getSelectedGender();
+
+  // Create a string with the form data
+  let data =
+    '\r Name: ' + name.value + ' \r\n ' +
+    'Gender: ' + gender.value;
+
+     
+    function getSelectedGender() {
+        var genderRadios = document.getElementsByName("gender");
+        for (var i = 0; i < genderRadios.length; i++) {
+          if (genderRadios[i].checked) {
+            return genderRadios[i].value;
+          }
+        }
+        // Return a default value if none of the radios are checked
+        return "";
+      }
+      
+
+      // Convert the text to BLOB.
+      const textToBLOB = new Blob([data], { type: 'text/plain' });
+      const sFileName = 'formData.txt';	   // The file to save the data.
+
+      let newLink = document.createElement("a");
+      newLink.download = sFileName;
+
+      if (window.webkitURL != null) {
+        newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+      }
+      else {
+        newLink.href = window.URL.createObjectURL(textToBLOB);
+        newLink.style.display = "none";
+        document.body.appendChild(newLink);
+      }
+
+      newLink.click(); 
+    }
+</script>
+</html>

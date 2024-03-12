@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #personalTab{
+            background-color: rgb(255, 255, 255);
+            color: rgb(4, 75, 180);
+            border-top: 5px solid #78448C;
+            border-left: 2px solid #78448C;
+        }
+        .savebtn{
+            margin:2% 0 0 5%;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="load"></div>
+    
+    <!-- <div class="container-fluid mt-2">
+        <div class="row ">
+            <div class="btn-group sticky-top" role="group" >
+                <button class="btn rounded-0 text-dark tab" id="personalTab" >Personal<span class="badge bg-warning">1</span></button>
+                <button class="btn tab" onclick="" disabled>Academic <span class=" badge bg-danger">2</span></button>
+                <button class="btn tab" disabled>Sports</a> <span class="badge bg-danger">3</span></button>
+                <button class="btn tab" disabled>ECA </a><span class="badge bg-danger">4</span></button>
+                <button class="btn tab" disabled>Uploads </a><span class="badge bg-danger">5</span></button>
+                <button class="btn tab" disabled>Preview <span class="badge bg-danger ">6</span></button>
+                <button class="btn rounded-0 tab" disabled>Final Submission <span class="badge bg-danger ">7</span></button>
+
+            </div>
+        </div>
+     </div>     -->
+            <div class="box border px-3" id="personal" class="tabcontent">
+                <div  class="container-fluid"   >
+                    <div class="row mt-4 py-2 border">
+                        <div class="col-lg-12"  style="font-size: 18px;">Personal Details</div>
+                    </div> 
+                    </div>
+                <form id="personalForm" method="get"> 
+                <div class="container-fluid  border">
+                    <div class="row">                                                                                                                                                                                               <div class="row my-3">
+                    <div class="col-lg-6" >FULL NAME of the CANDIDATE<span style="color: red;">*</span>
+                        <div class="row my-3 ">
+                            <div class="col-lg-12">
+                                <input id="fullname"
+                                 type="text" class="form-control inputs" required >
+                            </div>
+                    </div></div>
+                    <div class="col-lg-6"><label for="gender" id="gender">Candidate's Gender</label><span style="color: red;">*</span>
+                        <div class="row my-3">
+                            <div class="col-lg-6">
+                        <input 
+                         type="radio" id="male" name="gender" value="male" class="ml-3" checked  ><label for="male" class="mx-2" required><b>Male</b></label>
+                        <input 
+                         type="radio" id="female" name="gender" value="female" class="ml-3" ><label for="female" class="mx-2"><b>Female</b></label>
+                        <input 
+                         type="radio" id="other" name="gender" value="other" class="ml-3"><label for="other" class="mx-2"><b>Other</b></label>
+     
+                            </div>
+                    </div>
+                    </div>
+                </div>
+          
+               
+                <div class="row my-3">
+                    <div class="col-lg-3">Applicant's Date of Birth<span style="color: red;">*</span>
+                        <div class="row my-3 ">
+                            <div class="col-lg-12 m-0 d-flex">
+                                <input 
+                                 id="day" type="number" max="31" min="1" class="form-control inputs" placeholder="Day" required>
+                                
+                                <select id="month" class="form-select m-0" required>
+                                    <option id="select" value="none" disabled selected>Month</option>
+                                    <option id="jan" name="jan" >January</option>
+                                    <option id="feb" name="feb">February</option>
+                                    <option id="mar" name="mar">March</option>
+                                    <option id="apr" name="apr">April</option>
+                                    <option id="may" name="may">May</option>
+                                    <option id="jun" name="jun">June</option>
+                                    <option id="jul" name="jul">July</option>
+                                    <option id="aug" name="aug">August</option>
+                                    <option id="sep" name="sep">September</option>
+                                    <option id="oct" name="oct">October</option>
+                                    <option id="nov" name="nov">November</option>
+                                    <option id="dec" name="dec">December</option>
+                                </select>
+                            
+                            
+                                <input 
+                                 type="number" id="year" min="1995" max="2005" class="form-control inputs" placeholder="Year" required>
+                            </div></div></div>
+                    <div class="col-lg-3"><label for="citizen" id="indian">Are you Citizen of India?<span style="color: red;">*</span>
+                        <div class="row my-3 ">
+                            <div class="col-lg-12 m-0 d-flex">
+                                <input 
+                                 type="radio" id="Yes" name="indian" value="indian
+                                 " checked><label for="indian" class="mx-2"><b>Yes</b></label>
+                                <input 
+                                 type="radio" id="No" name="indian" value="not-indian"><label for="indian" class="mx-2"><b>No</b></label>
+                            </div></div></div>
+                    <div class="col-lg-3"><label for="reservation" >Category (UR, OBC-NCL, SC, ST, EWS)<span style="color: red;">*</span>
+                        <div class="row my-3 ">
+                            <div class="col-lg-12 m-0 d-flex">
+                                <select id="reservation" class="form-select m-0" required>
+                                    <option id="select" value="none" disabled selected>Select</option>
+                                    <option id="ur" name="unres" value="UR">Unreserver(UR)</option>
+                                    <option id="obc" name="obc" value="obc-ncl">OBC-NCL</option>
+                                    <option id="res" name="res" value="sc/st">SC/ST</option>
+                                    <option id="ews" name="ews" value="ews">EWS</option>
+                                    </select>
+                            </div></div></div>
+                    <div class="col-lg-3"><label for="minority">Apply to Minority College as<span style="color: red;">*</span>
+                        <div class="row my-3 ">
+                            <div class="col-lg-12 m-0 d-flex">
+                                <select id="minority" class="form-select m-0" required>
+                                    <option id="select" value="none" disabled selected>Select</option>
+                                    <option id="no" name="notminor" value="N/A" >Not Applicable</option>
+                                    <option id="yes" name="minor" value="applicable">Applicable</option>
+                                </select>                        
+                            </div></div></div>
+                </div>
+                
+                    <div class="row my-3">
+                        <div class="col-lg-3"><label for="email">Candidate's Email<span style="color: red;">*</span>
+                            <div class="row my-3">
+                                <div class="col-lg-12">
+                                    <input 
+                                     type="email" id="pemail" class="form-control inputs " required>
+                                </div></div></div>
+                        <div class="col-lg-3">Alternate Email
+                            <div class="row my-3">
+                                <div class="col-lg-12">
+                                    <input 
+                                     type="email" id="aemail" class="form-control inputs " >
+                                </div></div>
+                        </div>
+                        <div class="col-lg-3">Mobile Number<span style="color: red;">*</span>
+                            <div class="row my-3">
+                                <div class="col-lg-12">
+                                    <input 
+                                     type ="phone" id="pphone" class="form-control inputs"  pattern="[789][0-9]{9}" required>
+                                </div></div></div>
+                        <div class="col-lg-3">Alternate Mobile Number</span>
+                            <div class="row my-3">
+                                <div class="col-lg-12">
+                                    <input 
+                                     type ="phone" id="aphone" class="form-control inputs"  pattern="[789][0-9]{9}" >
+                                </div></div></div>
+                    </div>
+                    </div>
+                    
+                    <div class="row my-3">
+                        <div class="col-lg-12">State of Domicile<span style="color: red;">*</span></div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-lg-3">
+                            <select name="state" id="domicile" class="form-select" required>
+                                <option value="none" disabled selected>Select</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                <option value="Daman and Diu">Daman and Diu</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Lakshadweep">Lakshadweep</option>
+                                <option value="Puducherry">Puducherry</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="West Bengal">West Bengal</option>
+                                </select>
+            
+                        </div>
+                    </div>
+                </div>
+            
+             
+            
+         <div class="container-fluid">
+                <div class="row mt-4 py-2 border">
+                    <div class="col-lg-12">Family Details</div>
+                </div> 
+                </div>
+                <div class="container-fluid border">
+                    <div class="row my-3">
+                        <div class="col-lg-3">Are you an Orphan?</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <select class="form-select" id="orphan" onchange="handleOrphanSelection()" required>
+                                <option value="none" >Select</option>
+                                <option value="orphan">Yes</option>
+                                <option value="parented" >No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-lg-3">Mother's Name<span style="color: red;">*</span>
+                            <div class="row my-3">
+                                <div class="col-lg-12">
+                                    <input 
+                                     type="text" id="mname" class="form-control inputs" required>
+                                </div></div></div>
+                        <div class="col-lg-3">Mother's Occupation <span style="color: red;">*</span>
+                            <div class="row my-3">
+                                <div class="col-lg-12">
+                                    <input 
+                                     type="text" id="mocc" class="form-control inputs" required>
+                                </div></div></div>
+                        <div class="col-lg-3">Mother's Office Address 
+                            <div class="row my-3">
+                                <div class="col-lg-12">
+                                    <input 
+                                     type="text" id="moff" class="form-control inputs" required>
+                                </div></div>
+                        </div>
+                        <div class="col-lg-3">Mother's Mobile Number
+                            <div class="row my-3">
+                                <div class="col-lg-12">
+                                    <input 
+                                     type="text" id="mphone" class="form-control inputs" required>
+                                </div></div>
+                        </div>
+                    </div>
+                    
+                    <div class="row my-3">
+                        <div class="col-lg-3">Father's/ Guardian's Name<span style="color: red;">*</span>
+                        <div class="row my-3">
+                            <div class="col-lg-12">
+                                <input 
+                                 type="text" id="fname" class="form-control inputs" required>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">Father's/ Guardian's Occupation <span style="color: red;">*</span>
+                        <div class="row my-3">
+                            <div class="col-lg-12">
+                                <input 
+                                 type="text" id="focc" class="form-control inputs" required>
+                            </div></div>
+                            </div>
+                        <div class="col-lg-3">Father's/ Guardian's Office Address 
+                        <div class="row my-3">
+                            <div class="col-lg-12">
+                                <input 
+                                 type="text" id="foff" class="form-control inputs" required>
+                            </div></div></div>
+                        <div class="col-lg-3">Father's/ Guardian's Mobile Number
+                        <div class="row my-3">
+                            <div class="col-lg-12">
+                                <input 
+                                 type="phone" id="fphone" pattern="[789][0-9]{9}" class="form-control inputs" required>
+                            </div>
+                            </div>
+                    </div>
+                   </div>
+                    </div>
+                     <div class="container-fluid">
+                        <div class="row mt-4 py-2 border">
+                            <div class="col-lg-12">Ward Quota Details</div>
+                        </div> 
+                        </div>
+                        <div class="container-fluid border">
+                            <div class="row my-3">
+                                <div class="col-lg-3">University of Delhi Ward Quota<span style="color: red;">*</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 mb-3">
+                                    <select class="form-select" id="wardquota" required>
+                                        <option value="none" >Select</option>
+                                        <option value="Yes" id="yes">Yes</option>
+                                        <option value="No" id="no" >No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            </div> 
+                            <div class="container-fluid">
+                                <div class="row mt-4 py-2 border">
+                                    <div class="col-lg-12">Address</div>
+                                </div> 
+                                </div> 
+                                <div class="container-fluid border d-flex">
+                                    <div class="row my-3">
+                                        <div class="col-lg-6">Correspondence Address<span style="color: red;">*</span>
+                                        <div class="row my-3">
+                                            <div class="col-lg-6 ">Address Line 1<span style="color: red;">*</span>
+                                                <div class="row my-3">
+                                                    <div class="col-lg-12 "><input 
+                                                         type="text" class="form-control inputs" id="add1" required>
+                                                    </div></div></div>
+                                            <div class="col-lg-6">Address Line 2<span style="color: red;">*</span>
+                                                <div class="row my-3">
+                                                    <div class="col-lg-12 "><input 
+                                                         type="text" class="form-control inputs" id="add2" required>
+                                                    </div></div></div>
+                                        </div>
+                                        
+                                    <div class="row my-3">
+                                        <div class="col-lg-3">Country<span style="color: red;">*</span>
+                                            <div class="row my-3">
+                                                <div class="col-lg-12"><select class="form-select" id="country" required><option value="none" disabled selected>Select</option>
+                                                    <option value="india">India</option></select></div>
+                                                </div></div>
+                                        <div class="col-lg-3">State<span style="color: red;">*</span>
+                                            <div class="row my-3">
+                                                <div class="col-lg-12">
+                                                    <select class="form-select" id="state" required>
+                                                    <option value="none" selected disabled>Select</option>
+                                                    <option value="delhi">Delhi</option>
+                                                    <option value="up">Uttar Pradesh</option>
+                                                </select>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">City<span style="color: red;">*</span>
+                                            <div class="row my-3">
+                                                <div class="col-lg-12">
+                                                    <select id="city" class="form-select" required>
+                                                    <option value="none" disabled  selected>Select</option>
+                                                    <option valu="GZB">GZB</option>
+                                                    <option value="Noida">Noida</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">Pincode<span style="color: red;">*</span>
+                                            <div class="row my-3">
+                                            <div class="col-lg-12">
+                                                <input 
+                                                 type="number" id="pin" min="100000" max="888888" class="form-control inputs" required>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                    
+                                
+                                        
+                                        <div class="col-lg-6">Permanent Address<input 
+                                             type="checkbox" id="sameadd" class="mx-3" onchange="setPermanentAddress()" required>Click if same as Correspondence Address.
+                                            <div class="row my-3"> 
+                                                <div class="col-lg-6 ">Address Line 1<span style="color: red;">*</span>
+                                                    <div class="row my-3">
+                                                        <div class="col-lg-12 "><input 
+                                                             type="text" class="form-control inputs permanent" id="padd1"></div>
+                                                    </div></div>
+                                                <div class="col-lg-6">Address Line 2<span style="color: red;">*</span><div class="row my-3">
+                                                    <div class="col-lg-12 "><input 
+                                                         type="text" class="form-control inputs permanent" id="padd2"></div>
+                                                </div></div>
+                                            </div>
+                                            
+                                        <div class="row my-3">
+                                        <div class="col-lg-3">Country<span style="color: red;">*</span>
+                                            <div class="row my-3">
+                                                <div class="col-lg-12"><select class="form-select permanent" id="pcountry" required>
+                                                    <option value="none" disabled selected>Select</option>
+                                                    <option value="india">India</option></select></div></div></div>
+                                        <div class="col-lg-3">State<span style="color: red;">*</span>
+                                            <div class="row my-3">
+                                                <div class="col-lg-12">
+                                                    <select class=" form-select inputs permanent" id="pstate" required >
+                                                        <option value="none"  disabled selected>Select</option>
+                                                    <option value="delhi">Delhi</option>
+                                                    <option value="up">Uttar Pradesh</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="col-lg-3">City<span style="color: red;">*</span>
+                                            <div class="row my-3">
+                                                <div class="col-lg-12">
+                                                    <select class="form-select  permanent" id="pcity" required>
+                                                    <option value="none"  selected>Select</option>
+                                                    <option value="GZB">GZB</option>
+                                                    <option value="Noida">Noida</option>
+                                        </select></div></div></div>
+                                        <div class="col-lg-3">Pincode<span style="color: red;">*</span>
+                                            <div class="row my-3">
+                                                <div class="col-lg-12">
+                                                    <input type="number" id="ppin" min="110000" max="888888" class="form-control inputs permanent" required>
+                                                </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div> 
+                            
+                               
+                </div>
+                <button class="savebtn" onclick="retrieveJsonFile()">retrieve as Json</button>
+                <button class="savebtn" onclick="jsonFile()">Save as Json</button>
+            <button class="savebtn" onclick="saveFile()">Save as TextFile</button>
+                <button   onclick="validate()" style="background-color: rgb(9, 128, 184); width: 33%; margin:2% 33%; border:none; color: white;">
+                    <a href="academic.html" style="color:white"><b>Submit</b></a></button>
+            </form>
+            </div>
+     </div>
+
+
+
+
+
+<script>
+     var name = document.getElementById("fullname").value;
+        var gender = getSelectedGender();
+        var day = document.getElementById("day").value;
+        var month = document.getElementById("month").value;
+        var year = document.getElementById("year").value;
+        var indian = getSelectedCitizenship();
+        var reservation = document.getElementById("reservation").value;
+        var minority = document.getElementById("minority").value;
+        var pemail = document.getElementById("pemail").value;
+        var aemail = document.getElementById("aemail").value;
+        var pphone= document.getElementById("pphone").value;
+        var aphone= document.getElementById("aphone").value;
+        var domicile= document.getElementById("domicile").value;
+        var orphan = document.getElementById("orphan").value;
+        var mname = document.getElementById("mname").value;
+        var mocc= document.getElementById("mocc").value;
+        var moff= document.getElementById("moff").value;
+        var mphone= document.getElementById("mphone").value;
+        var fname = document.getElementById("fname").value;
+        var focc= document.getElementById("focc").value;
+        var foff= document.getElementById("foff").value;
+        var fphone= document.getElementById("fphone").value;
+        var wardquota= document.getElementById("wardquota").value;
+        var add1= document.getElementById("add1").value;
+        var add2= document.getElementById("add2").value;
+        var country= document.getElementById("country").value;
+        var state= document.getElementById("state").value;
+        var city= document.getElementById("city").value;
+        var pin= document.getElementById("pin").value;
+        var padd1= document.getElementById("padd1").value;
+        var padd2= document.getElementById("padd2").value;
+        var pcountry= document.getElementById("pcountry").value;
+        var pstate= document.getElementById("pstate").value;
+        var pcity= document.getElementById("pcity").value;
+        var ppin= document.getElementById("ppin").value;
+        function getSelectedGender() {
+        var genderRadios = document.getElementsByName("gender");
+        for (var i = 0; i < genderRadios.length; i++) {
+          if (genderRadios[i].checked) {
+            return genderRadios[i].value;
+          }
+        }
+        
+        return "";
+      }
+      
+      function getSelectedCitizenship() {
+        var citizenRadios = document.getElementsByName("indian");
+        for (var i = 0; i < citizenRadios.length; i++) {
+          if (citizenRadios[i].checked) {
+            return citizenRadios[i].value;
+          }
+        }
+        return "";
+      }
+      
+       
+    
+    let jsonFile =() => {
+        var name = document.getElementById("fullname").value;
+        var gender = getSelectedGender();
+        var day = document.getElementById("day").value;
+        var month = document.getElementById("month").value;
+        var year = document.getElementById("year").value;
+        var indian = getSelectedCitizenship();
+        var reservation = document.getElementById("reservation").value;
+        var minority = document.getElementById("minority").value;
+        var pemail = document.getElementById("pemail").value;
+        var aemail = document.getElementById("aemail").value;
+        var pphone= document.getElementById("pphone").value;
+        var aphone= document.getElementById("aphone").value;
+        var domicile= document.getElementById("domicile").value;
+        var orphan = document.getElementById("orphan").value;
+        var mname = document.getElementById("mname").value;
+        var mocc= document.getElementById("mocc").value;
+        var moff= document.getElementById("moff").value;
+        var mphone= document.getElementById("mphone").value;
+        var fname = document.getElementById("fname").value;
+        var focc= document.getElementById("focc").value;
+        var foff= document.getElementById("foff").value;
+        var fphone= document.getElementById("fphone").value;
+        var wardquota= document.getElementById("wardquota").value;
+        var add1= document.getElementById("add1").value;
+        var add2= document.getElementById("add2").value;
+        var country= document.getElementById("country").value;
+        var state= document.getElementById("state").value;
+        var city= document.getElementById("city").value;
+        var pin= document.getElementById("pin").value;
+        var padd1= document.getElementById("padd1").value;
+        var padd2= document.getElementById("padd2").value;
+        var pcountry= document.getElementById("pcountry").value;
+        var pstate= document.getElementById("pstate").value;
+        var pcity= document.getElementById("pcity").value;
+        var ppin= document.getElementById("ppin").value;
+        function getSelectedGender() {
+        var genderRadios = document.getElementsByName("gender");
+        for (var i = 0; i < genderRadios.length; i++) {
+          if (genderRadios[i].checked) {
+            return genderRadios[i].value;
+          }
+        }
+        
+        return "";
+      }
+      
+      function getSelectedCitizenship() {
+        var citizenRadios = document.getElementsByName("indian");
+        for (var i = 0; i < citizenRadios.length; i++) {
+          if (citizenRadios[i].checked) {
+            return citizenRadios[i].value;
+          }
+        }
+        return "";
+      }
+    
+        let formData = {
+  Name: name,
+  Gender: gender,
+  DOB: day + month + year,
+  Indian: indian,
+  Reservation: reservation,
+  Minority: minority,
+  Email: pemail,
+  'Alternate Email': aemail,
+  'Mobile': pphone,
+  'Alternate Mobile': aphone,
+  Domicile: domicile,
+  Orphan: orphan,
+  'Mother Name': mname,
+  'Mother Occupation': mocc,
+  'Mother Office': moff,
+  'Mother Phone': mphone,
+  'Father Name': fname,
+  'Father Occupation': focc,
+  'Father Office': foff,
+  'Father Phone': fphone,
+  'Ward Quota': wardquota,
+  'Corr-Address': add1 + ' ' + add2 + ' ' + country + ' ' + state + ' ' + city + ' ' + pin,
+  'Perm-Address': padd1 + ' ' + padd2 + ' ' + pcountry + ' ' + pstate + ' ' + pcity + ' ' + ppin
+};
+
+let jsonData = JSON.stringify(formData, null, 2);
+
+// Convert the JSON data to a Blob.
+const jsonBlob = new Blob([jsonData], { type: 'application/json' });
+
+// Save the JSON file.
+const jsonFileName = 'formData.json';
+const jsonLink = document.createElement('a');
+
+jsonLink.download = jsonFileName;
+
+if (window.webkitURL != null) {
+  jsonLink.href = window.webkitURL.createObjectURL(jsonBlob);
+} else {
+  jsonLink.href = window.URL.createObjectURL(jsonBlob);
+  jsonLink.style.display = 'none';
+  document.body.appendChild(jsonLink);
+}
+
+jsonLink.click();
+
+ }   
+
+
+let saveFile = () => {
+       
+
+      let data =
+  '\r Name: ' + name  + ' \r\n ' +
+  'Gender: ' + gender  + ' \r\n ' +
+  'DOB: ' + day  + month + year + '\r\n ' +
+  'Indian:' + indian + '\r\n' +
+  'Reservation:' +  reservation  + '\r\n' +
+  'Minority:' +  minority  + '\r\n' +
+  'Email:' +  pemail  + '\r\n' +
+  'Alternate Email:' +  aemail  + '\r\n' +
+  'Mobile: ' + pphone + '\r\n' +
+  'Alternate Mobile:' + aphone + '\r\n' +
+  'Domicile:' +  domicile  + '\r\n' +
+  'Orphan:' + orphan + '\r\n' +
+  'Mother Name:' + mname + '\r\n' +
+  'Mother Occupation:' + mocc + '\r\n' +
+  'Mother Office:' + moff + '\r\n' +
+  'Mother Phone:' + mphone + '\r\n' +
+  'Father Name:' + fname + '\r\n' +
+  'Father Occupation:' + focc + '\r\n' +
+  'Father Office:' + foff + '\r\n' +
+  'Father Phone:' + fphone + '\r\n' +
+  'Ward Quota:' + wardquota + '\r\n' +
+  'Corr-Address:' + add1 + ' ' + add2 + ' ' + country + ' ' + state + ' ' + city + ' ' + pin + '\r\n' +
+  'Perm-Address:' + padd1 + ' ' + padd2 + ' ' + pcountry + ' ' + pstate + ' ' + pcity + ' ' + ppin + '\r\n';
+
+console.log(data);
+
+// Rest of your code for saving the file...
+
+
+
+      // Convert the text to BLOB.
+      const textToBLOB = new Blob([data], { type: 'text/plain' });
+      const sFileName = 'formData.txt';	   // The file to save the data.
+
+      let newLink = document.createElement("a");
+      newLink.download = sFileName;
+
+      if (window.webkitURL != null) {
+        newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+      }
+      else {
+        newLink.href = window.URL.createObjectURL(textToBLOB);
+        newLink.style.display = "none";
+        document.body.appendChild(newLink);
+      }
+
+      newLink.click(); 
+    
+      
+        localStorage.setItem("Fullname", name);
+        localStorage.setItem("gender", gender);
+        localStorage.setItem("dob", day + month + year);
+        localStorage.setItem("indian", indian);
+        localStorage.setItem("reservation", reservation);
+        localStorage.setItem("minor", minority);
+        localStorage.setItem("pemail",pemail);
+        localStorage.setItem("aemail",aemail);
+        localStorage.setItem("phone",pphone);
+        localStorage.setItem("aphone",aphone);
+        localStorage.setItem("domicile", domicile);
+        localStorage.setItem("orphan", orphan);
+        localStorage.setItem("mname", mname);
+        localStorage.setItem("mocc", mocc);
+        localStorage.setItem("moff", moff);
+        localStorage.setItem("mphone", mphone);
+        localStorage.setItem("fname", fname);
+        localStorage.setItem("focc", focc);
+        localStorage.setItem("foff", foff);
+        localStorage.setItem("fphone", fphone);
+        localStorage.setItem("wardquota", wardquota);
+        localStorage.setItem("corr-address", add1 + add2 + country + city + pin);
+        localStorage.setItem("permanentaddress", padd1 + padd2 + pcountry + pcity + ppin);
+        
+      
+        var getname = localStorage.getItem("Fullname");
+        var getgender = localStorage.getItem("gender");
+        var birthdate = localStorage.getItem("dob");
+        var storedIndian = localStorage.getItem("indian");
+        var getReservation = localStorage.getItem("reservation");
+        var getminor =localStorage.getItem("minor", minority);
+        var getpemail = localStorage.getItem("pemail",pemail);
+        var getaemail = localStorage.getItem("aemail",aemail);
+        var getpphone = localStorage.getItem("phone",pphone);
+        var getaphone = localStorage.getItem("aphone",aphone);
+        var getdomicile = localStorage.getItem("domicile", domicile);
+        var getorphan = localStorage.getItem("orphan", orphan);
+        var getmname = localStorage.getItem("mname", mname);
+        var getmocc = localStorage.getItem("mocc", mocc);
+        var getmoff = localStorage.getItem("moff", moff);
+        var getmphone = localStorage.getItem("mphone", mphone);
+        var getfname = localStorage.getItem("fname", fname);
+        var getfocc = localStorage.getItem("focc", focc);
+        var getfoff = localStorage.getItem("foff", foff);
+        var getfphone = localStorage.getItem("fphone", fphone);
+        var getwardquota = localStorage.getItem("wardquota", wardquota);
+        var getcorradd = localStorage.getItem("corr-address", add1 + add2 + country + city + pin);
+        var getpermadd = localStorage.getItem("permanentaddress", padd1 + padd2 + pcountry + pcity + ppin);
+        console.log(getname);
+        console.log(getgender);
+        console.log(birthdate);
+        console.log(storedIndian); 
+        console.log(getReservation);
+        console.log(getminor);
+        console.log(getpemail);
+        console.log(getaemail);
+        console.log(getpphone);
+        console.log(getaphone);
+        console.log(getdomicile);
+        console.log(getorphan);
+        console.log(getmname);
+        console.log(getmocc);
+        console.log(getmoff);
+        console.log(getmphone);
+        console.log(getfname);
+        console.log(getfocc);
+        console.log(getfoff);
+        console.log(getfphone);
+        console.log(getwardquota);
+        console.log(getcorradd);
+        console.log(getpermadd);
+    }
+      
+      </script>
+        
+        
+
+    <script type="text/javascript">
+        var xhr= new XMLHttpRequest();
+            xhr.open('GET', 'header2.html', true);
+            xhr.onreadystatechange= function() {
+                if (this.readyState!==4) return;
+                if (this.status!==200) return; // or whatever error handling you want
+                document.getElementById('load').innerHTML= this.responseText;
+            };
+            xhr.send();
+    </script>
+ 
+ <script src="js/function.js"></script>
+</body>
+</html>

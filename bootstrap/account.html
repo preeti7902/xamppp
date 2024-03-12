@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>badges</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        form{
+            display: flex;
+            width:100%;
+        }
+        .form-horizontal{
+            margin: 10% 40%;
+            text-align: center;
+        }
+        .input {
+                margin: 1vw;
+              
+        }
+        .fa-check{
+            visibility: hidden;
+        }
+        .form-2{
+           margin: 3vh 5vw 3vh 2vw ;
+           width: 20%;
+           border: 1px solid rgb(207, 207, 207);
+           border-radius: 5px;
+        }
+
+        .form-head{
+            background-color: rgb(29, 29, 124);
+            font-weight:600;
+            color: white;
+            border: 1px solid black;
+            margin-bottom: 3vh;
+        }
+       
+        .row{
+            margin:5vh 0 0 0;
+        }
+        .badge{
+            margin: 0 1vw;
+        }
+        .col-lg-12{
+            border: 1px solid rgb(207, 207, 207);
+            border-block-end:none;
+            padding: 8px 0;
+            width: 80%;
+            margin-left: 2vw;
+        }
+        .col-lg-12:nth-last-child(1){
+            border-bottom-right-radius: 5px ;
+            border-bottom-left-radius: 5px ;
+            border-bottom: 1px solid rgb(207, 207, 207);
+        }
+        .col-lg-12:nth-child(1){
+            border-top-right-radius: 5px ;
+            border-top-left-radius: 5px ;
+            
+        }
+        .form-3{
+            width:70vw;
+            margin: 3vh 0;  
+        }
+        .notice{
+            font-size: 11px;
+        }
+        input{
+              padding:0.8vh 1vw ;
+              
+        }
+        label{
+            margin:3vh 3vw ;
+        }
+        #select{
+            padding: 5px 40px;
+            background-color: white;
+            border: 1px solid rgb(161, 154, 154);
+        }
+        canvas{
+            background-color: rgb(250, 248, 111);
+        }
+
+    </style>
+</head>
+<body>
+
+
+<form>
+<div class="form-2">
+        <div class="form-info">
+            <div class="form-head form-control" >Read Instructions Carefully</div>
+            <div class="box">
+                <div class="row justify-content-start">
+                    <div class="col-lg-12">
+                      <span class="badge">1</span>Enter valid mail id.
+                    </div>
+                        <div class="col-lg-12">
+                          <span class="badge">2</span>Registered email and phonr will be used for future use.
+                        </div>
+                        
+                            <div class="col-lg-12">
+                              <span class="badge">3</span>Enter valid mail id.
+                            </div>
+                            
+                                <div class="col-lg-12">
+                                  <span class="badge">4</span>Enter valid mail id.
+                                </div>
+                                
+                                    <div class="col-lg-12">
+                                      <span class="badge">5</span><span style="color: red;">(*) Mandatory field</span>
+                                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+    </div>
+</div>
+   
+<div class="form-3">
+        <div class="form-head form-control" >Create New Account</div>
+        <div class="box-2">
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="name" id="name">Name<span style="color:red;">*</span><p class="notice">(As per class XII board)</p></label>
+                    </div>
+                    <div class="col-lg-8">
+                    <input class="inputs" type="text" placeholder="First Name" ><input class="inputs" type="text" placeholder="Middle Name" ><input class="inputs" type="text"  placeholder="Last Name">
+                </div>
+                </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label for="name" id="name">Email<span style="color:red;">*</span></label>  
+                    <input class="inputs" type="email" placeholder="Mail id">
+                </div>
+                <div class="col-sm-6">  
+                    <label for="email">Confirm Email<span style="color:red;">*</span></label>
+                    <input class="inputs" type="email" class="inputs" placeholder="Re-enter Email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label for="name" id="name">Security Question<span style="color:red;">*</span></label>
+                    
+                    <select id="select" class="inputs" name="questions">
+                        <option value="none" disabled selected >Select</option>
+                        <option value="Place of Birth" >Place of Birth</option>
+                        <option value="Your Pet Name">Your Pet Name</option>
+                        <option value="Your Nickname">Your Nickname</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Answer">Security Answers<span style="color:red;">*</span></label><input class="inputs" type="text" placeholder="Your Answer" required>
+                </div>
+                </div>
+               <div class="row">
+                <div class="col-sm-6">
+                    <label for="pass" >Password<span style="color:red;">*</span></label>
+                    <input class="inputs" type="password" placeholder="Password">
+                    </div>
+                    
+                    <div class="col-sm-6">   
+                    <label for="pass">Confirm Password<span style="color:red;">*</span></label><input class="inputs" type="password" placeholder="Re-enter password" required>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-sm-6">
+                    <label for="mobile" >Phone Number<span style="color:red;">*</span></label>
+                    <input class="inputs" type="phone" placeholder="Phone number" pattern="1234567890" required>
+                    </div>
+                    <div class="col-sm-6">
+                    <label for="captcha">Captcha<span style="color:red;">*</span>
+                        <canvas id="captcha" width="90" height="30" style="border:1px solid grey;" onclick="generateCaptcha()"></canvas></label>
+                    
+                    <input class="inputs" type="text" id="usercaptcha" placeholder="Enter captcha">
+                    </div>
+                
+                </div>
+                <div class="row">
+                <div class="col-sm-12">
+                    <input class="inputs" type="checkbox" checked required><label for="declare">I hereby declare that details above are correct.</label>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-sm-12">   
+                    <a  class="btn bg-primary "  onclick="validate()" >Submit</a>
+                 
+                </div> 
+                </div>
+            
+            </div>
+        </div>
+</div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+    
+  
+
+
+
+
+      
+<script src="js/function.js"></script>
+
+<script>
+let txt= document.getElementById("captcha");
+let ctx= txt.getContext("2d");
+ctx.font='oblique 18px Arial ';
+
+let usertxt=document.getElementById("usercaptcha");
+
+var captchaStr = "";
+
+let alphaNums = ['A', 'B', 'C', 'D', 'E', 'F', 'G',
+                 'H', 'I', 'J', 'K', 'L', 'M', 'N', 
+                 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 
+                 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 
+                 'c', 'd', 'e', 'f', 'g', 'h', 'i', 
+                 'j', 'k', 'l', 'm', 'n', 'o', 'p', 
+                 'q', 'r', 's', 't', 'u', 'v', 'w', 
+                 'x', 'y', 'z', '0', '1', '2', '3', 
+                 '4', '5', '6', '7', '8', '9'];
+
+
+function generateCaptcha(){
+let arr=[];
+for (var i=0; i<=4; i++){
+    arr.push(alphaNums[Math.floor(Math.random() *alphaNums.length)]);
+}
+captchaStr=arr.join('');
+   ctx.clearRect(0, 0, txt.width, txt.height);
+   ctx.fillStyle="blue";
+   ctx.fillText(captchaStr, txt.width/4, txt.height/2);
+}
+
+function myFunction(){
+    if (usertxt.value === captchaStr){
+        
+       alert("Your account has been created");
+       usertxt=" ";
+    }else{
+        alert("Wrong Captcha");
+        return false;
+    }
+};
+
+function refresh(){
+    generateCaptcha();
+}
+generateCaptcha();
+
+
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

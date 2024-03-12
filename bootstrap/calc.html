@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/calc.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="calc">
+       
+       <table >
+        <thead>
+        <tr><td class="display"  colspan="4"><input type="text" name="input" id="input"  value="0" placeholder="0"></td></tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td colspan="2" id="clr" class="btn btn-dark" >AC</td>
+            <td class="btn btn-dark operator" >%</td>
+            <td class="btn btn-dark operator">/</td>
+            
+        </tr>
+        <tr>
+            <td class="btn btn-dark inputs">1</td>
+            <td class="btn btn-dark inputs">2</td>
+            <td class="btn btn-dark inputs">3</td>
+            <td class="btn btn-dark operator">*</td>
+            
+        </tr>
+        <tr>
+            <td class="btn btn-dark inputs">4</td>
+            <td class="btn btn-dark inputs">5</td>
+            <td class="btn btn-dark inputs">6</td>
+            <td class="btn btn-dark operator">-</td>
+        </tr>
+        <tr>
+            <td class="btn btn-dark inputs">7</td>
+            <td class="btn btn-dark inputs">8</td>
+            <td class="btn btn-dark inputs" >9</td>
+            <td class="btn btn-dark operator">+</td>
+        </tr>
+        <tr>
+            <td class="btn btn-dark inputs" >0</td>
+            <td class="btn btn-dark inputs" >.</td>
+            <td class="btn btn-dark operator" id="eq" colspan="2">=</td>
+        </tbody>   
+        </tr>
+        <caption style="text-align: center;">Calculator</caption>
+        </table>
+    </div>
+    <script>
+        let string="";
+        let button = document.querySelectorAll(".btn");
+        button.forEach((button)=>{
+        button.addEventListener('click', (e)=>{
+            if(e.target.innerHTML=="="){
+               string = eval(string);
+               document.getElementById("input").value=string;
+               
+            }
+            else if(e.target.innerHTML=="AC"){
+                string="";
+                document.getElementById("input").value=string;
+            }
+
+            else if(e.target.innerHTML=="%"){
+                string= parseFloat(eval(string))/100;
+                document.getElementById("input").value=string+ "%";
+            }
+            else{
+                console.log(e.target);
+                string = string + e.target.innerHTML;
+                document.getElementById("input").value=string;
+            };
+        })
+        })
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

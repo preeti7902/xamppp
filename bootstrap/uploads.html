@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploads</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .table td , #upload{
+            background-color: #fff4b6;
+        }
+        table tr td{
+            background-color: #fff4b6 !important;
+        } 
+        td{
+            padding: 2vh 3vw;
+        }
+        .buttons{
+            font-size:18px;
+            text-align: center;
+            font-weight:bolder;
+        }
+        #uploadsTab{
+            background-color: rgb(255, 255, 255);
+            color: rgb(4, 75, 180);
+            border-top: 5px solid #78448C;
+            border-left: 2px solid #78448C;
+        }
+    </style>
+</head>
+<body>
+    <div id="load"></div>
+    <div class="box border px-3" >
+        <div  class="container-fluid" id="upload">
+            <div class="row mt-4 py-2 border">
+                <div class="col-lg-12"  style="font-size: 18px;"><b>UPLOAD SECTION FOR PERSONAL DETAILS</b></div>
+            </div> 
+            </div>
+        <form id="uploadDetails" > 
+            <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <td scope="col"><b>Upload Applicant's photo (Passport size only)</b>
+                    <br><b><i class="text-primary">Min File Size: 10KB, Max File Size: 50KB</i>
+                        <br><i class="text-primary">Accepted Formats .jpg .jpeg .png</i></b></td>
+                    <td scope="col" >
+                        <div class="row">
+                            <div class="col-lg-6 mr-5">
+                                <label class="btn btn-success text-dark">
+                                <input  type="file" id="myFile" name="filename" accept=".jpeg, .jpg, .png" required hidden />Select File</label> <p id="warn1" class="text-danger"></p></div>
+                            
+                            <div class="col-lg-6"><button class="btn bg-primary text-light">Start Upload</button><button class="btn bg-danger text-light">Cancel</button></div>
+                        </div>
+                    </td>
+                    
+                </tr>
+
+                <tr>
+                    <td scope="col"><b>Upload Applicant's signature</b>
+                    <br><b><i class="text-primary">Min File Size: 10KB, Max File Size: 50KB</i>
+                        <br><i class="text-primary">Accepted Formats .jpg .jpeg .png</i></b></td>
+                    <td scope="col" >
+                        <div class="row">
+                            <div class="col-lg-6 mr-5">
+                                <label class="btn btn-success text-dark">
+                                    <input type="file" id="myFile" name="filename"  accept=".jpeg, .jpg, .png"  required hidden/>Select File
+                                    </label>
+                                <p id="warn2" class="text-danger"></p></div>
+                            
+                            <div class="col-lg-6"><button class="btn bg-primary text-light">Start Upload</button><button class="btn bg-danger text-light">Cancel</button></div>
+                        </div>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td scope="col"><b>Upload Applicant's 12th Result</b>
+                    <br><b><i class="text-primary">Min File Size: 200KB, Max File Size: 500KB</i>
+                        <br><i class="text-primary">Accepted Format .pdf </i></b></td>
+                    <td scope="col" >
+                        <div class="row">
+                            <div class="col-lg-6 mr-5">
+                                <label class="btn btn-success text-dark">
+                                    <input class="inputs" type="file" id="myFile" name="filename" accept=".pdf" required  hidden />Select File
+                                    </label>
+                                <p id="warn3" class="text-danger"></p></div>
+                            
+                            <div class="col-lg-6"><button class="btn bg-primary text-light">Start Upload</button><button class="btn bg-danger text-light">Cancel</button></div>
+                        </div>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td scope="col"><b>Upload Applicant's 10th Result</b>
+                    <br><b><i class="text-primary">Min File Size: 200KB, Max File Size: 500KB</i>
+                        <br><i class="text-primary">Accepted Format .pdf</i></b></td>
+                    <td scope="col" >
+                        <div class="row">
+                            <div class="col-lg-6 mr-5">
+                                <label class="btn btn-success text-dark">
+                                <input type="file" id="myFile" name="filename" size="5000000" accept=".pdf" required hidden />
+                                Select File</label>
+                                <p id="warn4" class="text-danger"></p></div>
+                            
+                            <div class="col-lg-6"><button class="btn bg-primary text-light">Start Upload</button><button class="btn bg-danger text-light">Cancel</button></div>
+                        </div>
+                    </td>
+                    
+                </tr>
+                
+            </table>
+        </div>
+            <div class="row mt-5 pl-4 d-flex buttons"  >
+                <div class="col-lg-4  p-2 b1 bg-primary"><a class="text-light" href="ECA.html">Previous</a></div>
+                    <div class="col-lg-4  p-2 b2 bg-warning"><button onclick="save()" class="text-light bg-warning border border-warning"></i>Save and Edit Later</button></div>
+                        <div class="col-lg-4 p-2 b3 bg-primary"><a class="text-light" href="#">Next</a></div>    
+            </div>
+            </form>
+            </div>
+
+
+
+
+
+
+    <script type="text/javascript">
+        var xhr= new XMLHttpRequest();
+             xhr.open('GET', 'header2.html', true);
+            xhr.onreadystatechange= function() {
+                if (this.readyState!==4) return;
+                if (this.status!==200) return; // or whatever error handling you want
+                document.getElementById('load').innerHTML= this.responseText;
+            };
+             xhr.send();
+        </script>
+<script src="js/function.js"></script>        
+</body>
+</html>

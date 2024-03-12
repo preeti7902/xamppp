@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta sport="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports</title>
+    <link rel="stylesheet" type="text/css" href="css/academic.css">
+    <style>
+        #sportsTab{
+            background-color: rgb(255, 255, 255);
+            color: rgb(4, 75, 180);
+            border-top: 5px solid #78448C;
+            border-left: 2px solid #78448C;
+        }
+        </style>
+</head>
+<body>
+
+    <div id="load"></div>
+    
+    
+    
+    <h1 class="mt-3" id="applySport">Applied Under Sports Category: <span id="change">No</span></h1>
+    <p id="sportData"></p>
+    
+    
+    <div class="row mt-5 pl-4 d-flex"  >
+        <div class="col-lg-4  p-2 b1"><a class="text-light" href="academic.html">Previous</a></div>
+            <div class="col-lg-4  p-2 b2"><button class="text-light" onclick="sportForm()">Add another Game/Sport</button></div>
+                <div class="col-lg-4 p-2 b3"><a class="text-light" href="#">Next</a></div>    
+    </div>
+    <div class="container">
+    <form id="addSport">
+       
+        <div class="row">
+        
+            <table class="col-lg-6 my-5 table table-bordered border-dark" align="center">
+                <thead>
+                <tr style="text-align: center;">
+                    <th>Sport/Game</th>
+                    <th>Marks</th>
+                    
+                </tr>
+                </thead>
+                <tbody >
+                    
+                    <tr>
+                    <th><input type="text" oninput="change()" id="sport" class="form-control inputs" required></th>
+                    <th><input type="number" oninput="change()" id="sportmark" class="form-control inputs" max="100" required></th>
+                    </tr>
+                    
+
+                </tbody>
+                </table>
+            </div>
+                <button onclick="validate()" style="background-color: rgb(9, 128, 184); width: 33%; margin:2% 33%; border-radius: 0; color: white;">
+                    <b>Submit</b></button>
+                
+            </div>
+            </form>
+        
+       
+
+
+</div>
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        var xhr= new XMLHttpRequest();
+             xhr.open('GET', 'header2.html', true);
+            xhr.onreadystatechange= function() {
+                if (this.readyState!==4) return;
+                if (this.status!==200) return; // or whatever error handling you want
+                document.getElementById('load').innerHTML= this.responseText;
+            };
+             xhr.send();
+        </script>
+        <script src="js/function.js"></script>
+<script>
+
+
+        </script>
+
+</body>
+</html>

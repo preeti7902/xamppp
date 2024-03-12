@@ -1,0 +1,33 @@
+.instr{
+    background-color: rgb(255, 202, 202);
+    font-size: 18px;
+    font-weight: 500;
+}
+table td{
+    outline:0;
+}
+
+table th{
+    font-weight: 400;
+}
+
+.b1, .b3{
+    background-color: rgb(9, 128, 184);
+} 
+.b2, button{
+background-color: rgb(88, 184, 9);
+border: 0;
+
+} 
+.b1, .b2, .b3{
+    font-size: 20px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+#addSport, #addEca{
+    display: none;
+}

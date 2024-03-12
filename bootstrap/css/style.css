@@ -1,0 +1,90 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: aliceblue
+}
+main{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+.logo{
+font-size: 30px;
+margin:2vh 10%;
+
+}
+.nav{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: fixed;
+    z-index: 1;
+    top:0;
+    width: 100%;
+}
+#chat{
+    border-radius: 5px;
+    background-color: rgb(18, 34, 63);
+    color: white;
+    margin: 2vh 11vw;
+}
+.nav-link{
+    margin: 2vh 0;
+    color: black;  
+    text-align: center;
+}
+.nav-link:hover{
+    background-color: rgb(178, 178, 182);
+    border: none;
+    color:rgb(0, 0, 0);
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+    background-color: #c6ccd5;
+    color: white;
+}
+
+.name{
+    left:0;
+    position: absolute;
+    text-align: center;
+    font-size: 100px;
+    font-family: 'Righteous', sans-serif;
+    color: aliceblue;
+    text-shadow: -2px 5px 10px rgb(167, 162, 162);
+    font-weight: bolder;
+}
+.about{
+    margin: 30vh 20vw;
+    background-color:linear-gradient(to right, rgb(206, 25, 25), white);
+   
+}
+#div1, #div2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    font-weight: bolder;
+    color: rgb(11, 24, 16);
+}
+#p3{
+width: 80%;
+font-size: 12px;
+color:rgb(124, 124, 124) ;
+}
+#hire{
+    margin-right: 3%;
+    background: linear-gradient(45deg, rgb(233, 48, 171) 50%, rgb(74, 12, 245));;
+    border: none;
+    color:white;
+    padding: 5px;
+    width: 10vw;
+   
+}
+
+#download{
+    background: -moz-linear-gradient(45deg, rgb(133, 132, 132) 0%, rgb(255, 255, 255));
+    box-shadow: 0 0 3px 0 rgb(194, 207, 218);
+}

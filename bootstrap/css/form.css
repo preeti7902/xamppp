@@ -1,0 +1,129 @@
+
+body {font-family: Arial;}
+.badge{
+    margin-left:5px;
+    background-color: rgb(255, 0, 98);
+}
+a{
+    text-decoration: none;
+}
+.nav{
+    font-weight: 500;
+    border:1px ridge white;
+}
+
+.header{
+    background-color: #78448C;
+    color:white;
+}
+
+.helpdesk{
+    border: none;
+    background-color:  #78448C;
+    color:white;
+    width: 100%;
+}
+.active{
+    background-color: rgb(255, 255, 255);
+    color: rgb(4, 75, 180);
+    border-top: 5px solid #78448C;
+    border-left: 2px solid #78448C;
+} 
+    
+@media screen and (max-width: 900px) {
+    .tab button {
+            width: 100%;
+            overflow: auto;
+        }
+    }
+
+@media screen and (min-width: 900px) {
+    .tab button {
+        width: 14.28%;
+        overflow: auto;
+    }
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1vh 0;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: rgb(255, 255, 255);
+    color: rgb(4, 75, 180);
+    border-top: 5px solid #78448C;
+    border-left: 2px solid #78448C;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+table td{
+    outline:0;
+}
+
+table th{
+    font-weight: 400;
+}
+
+.b1, .b3{
+    background-color: rgb(9, 128, 184);
+    cursor: pointer;
+} 
+.b2{
+background-color: rgb(88, 184, 9);
+border: 0;
+cursor: pointer;
+
+} 
+.b1, .b2, .b3{
+    font-size: 20px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+#addSport, #addEca{
+    display: none;
+}
+
+.table td , #upload{
+    background-color: #fff4b6;
+}
+table tr td{
+    background-color: #fff4b6 !important;
+} 
+td{
+    padding: 2vh 3vw;
+}
+.buttons{
+    font-size:18px;
+    text-align: center;
+    font-weight:bolder;
+}
